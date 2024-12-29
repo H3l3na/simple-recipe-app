@@ -4,6 +4,9 @@ public class IngredientDTO {
 
     private String name;
     private String quantity;
+    private Long recipeId;
+
+    public IngredientDTO() {}
 
     public IngredientDTO(String name, String quantity) {
         this.name = name;
@@ -24,6 +27,14 @@ public class IngredientDTO {
 
     public void setQuantity(String quantity) {
         this.quantity = quantity;
+    }
+
+    public Long getRecipeId() {
+        return recipeId;
+    }
+
+    public void setRecipeId(Long recipeId) {
+        this.recipeId = recipeId;
     }
 }
 

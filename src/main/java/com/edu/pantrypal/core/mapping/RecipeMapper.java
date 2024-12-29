@@ -17,8 +17,8 @@ public class RecipeMapper {
         dto.setCuisineType(recipe.getCuisineType());
         dto.setDietaryPreferences(recipe.getDietaryPreferences());
         dto.setDifficultyLevel(recipe.getDifficultyLevel());
-        // dto.setIngredients(recipe.getIngredients());
         dto.setRecipeName(recipe.getRecipeName());
+        dto.setPreparationSteps(recipe.getPreparationSteps());
 
         return dto;
     }
@@ -35,6 +35,7 @@ public class RecipeMapper {
         recipe.setDifficultyLevel(dto.getDifficultyLevel());
         recipe.setRatings(new ArrayList<>());
         recipe.setRecipeName(dto.getRecipeName());
+        recipe.setPreparationSteps(dto.getPreparationSteps());
 
         return recipe;
     }

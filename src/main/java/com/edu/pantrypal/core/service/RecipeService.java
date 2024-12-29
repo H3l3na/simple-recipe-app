@@ -1,5 +1,6 @@
 package com.edu.pantrypal.core.service;
 
+import com.edu.pantrypal.core.mapping.IngredientMapper;
 import com.edu.pantrypal.core.mapping.RecipeMapper;
 import com.edu.pantrypal.core.model.Recipe;
 import com.edu.pantrypal.core.model.User;
@@ -28,7 +29,10 @@ public class RecipeService {
     public RecipeDTO getRecipeById(Long recipeId) {
         Recipe recipe = recipeRepository.findByRecipeId(recipeId);
 
-        return RecipeMapper.toDTO(recipe);
+        RecipeDTO recipeDTO = RecipeMapper.toDTO(recipe);
+        recipeDTO.setIngredients(IngredientMapper.toDTO(recipe.getIngredients()));
+
+        return recipeDTO;
     }
 
     public Recipe createRecipe(RecipeDTO dto) {

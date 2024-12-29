@@ -16,6 +16,7 @@ public class Recipe {
     private int cookingTime;
     private String difficultyLevel;
     private String cuisineType;
+    private String preparationSteps;
 
     @ElementCollection
     private List<String> dietaryPreferences;
@@ -73,6 +74,14 @@ public class Recipe {
 
     public void setCuisineType(String cuisineType) {
         this.cuisineType = cuisineType;
+    }
+
+    public String getPreparationSteps() {
+        return preparationSteps;
+    }
+
+    public void setPreparationSteps(String preparationSteps) {
+        this.preparationSteps = preparationSteps;
     }
 
     public List<String> getDietaryPreferences() {

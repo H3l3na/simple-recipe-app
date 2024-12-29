@@ -13,6 +13,7 @@ public class Ingredient {
 
     private String name;
     private String quantity;
+    private Long recipeId;
 
     public Ingredient() {}
 
@@ -43,5 +44,13 @@ public class Ingredient {
 
     public void setQuantity(String quantity) {
         this.quantity = quantity;
+    }
+
+    public Long getRecipeId() {
+        return recipeId;
+    }
+
+    public void setRecipeId(Long recipeId) {
+        this.recipeId = recipeId;
     }
 }

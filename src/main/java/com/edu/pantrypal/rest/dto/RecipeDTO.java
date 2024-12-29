@@ -9,6 +9,7 @@ public class RecipeDTO {
     private int cookingTime;
     private String difficultyLevel;
     private String cuisineType;
+    private String preparationSteps;
     private List<String> dietaryPreferences;
     private List<IngredientDTO> ingredients;
 
@@ -61,6 +62,14 @@ public class RecipeDTO {
 
     public void setCuisineType(String cuisineType) {
         this.cuisineType = cuisineType;
+    }
+
+    public String getPreparationSteps() {
+        return preparationSteps;
+    }
+
+    public void setPreparationSteps(String preparationSteps) {
+        this.preparationSteps = preparationSteps;
     }
 
     public List<String> getDietaryPreferences() {
