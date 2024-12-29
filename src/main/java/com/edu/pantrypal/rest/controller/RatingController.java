@@ -18,13 +18,13 @@ public class RatingController {
         this.ratingService = ratingService;
     }
 
-    @PostMapping
+    @PostMapping("/add")
     public ResponseEntity<Rating> addRating(@RequestBody RatingDTO ratingDTO) {
         return ResponseEntity.ok(ratingService.addRating(ratingDTO));
     }
 
     @GetMapping("/{recipeId}")
-    public ResponseEntity<List<RatingDTO>> getRatingsByRecipe(@PathVariable Long recipeId) {
+    public ResponseEntity<List<Rating>> getRatingsByRecipe(@PathVariable Long recipeId) {
         return ResponseEntity.ok(ratingService.getRatingsByRecipe(recipeId));
     }
 }

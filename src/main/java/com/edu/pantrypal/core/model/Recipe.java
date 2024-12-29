@@ -1,9 +1,11 @@
 package src.main.java.com.edu.pantrypal.core.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import jakarta.persistence.*;
 import java.util.List;
 
-@Entity
+@JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
+@Entity(name="recipe")
 public class Recipe {
 
     @Id
@@ -24,7 +26,8 @@ public class Recipe {
     @OneToMany(cascade = CascadeType.ALL, orphanRemoval = true)
     private List<Rating> ratings;
 
-    // Constructor for dependency injection
+    public Recipe() {}
+
     public Recipe(String recipeName, int cookingTime, String difficultyLevel, String cuisineType) {
         this.recipeName = recipeName;
         this.cookingTime = cookingTime;
@@ -32,5 +35,67 @@ public class Recipe {
         this.cuisineType = cuisineType;
     }
 
-    // Getters and setters omitted for brevity
+    public Long getRecipeId() {
+        return recipeId;
+    }
+
+    public void setRecipeId(Long recipeId) {
+        this.recipeId = recipeId;
+    }
+
+    public String getRecipeName() {
+        return recipeName;
+    }
+
+    public void setRecipeName(String recipeName) {
+        this.recipeName = recipeName;
+    }
+
+    public int getCookingTime() {
+        return cookingTime;
+    }
+
+    public void setCookingTime(int cookingTime) {
+        this.cookingTime = cookingTime;
+    }
+
+    public String getDifficultyLevel() {
+        return difficultyLevel;
+    }
+
+    public void setDifficultyLevel(String difficultyLevel) {
+        this.difficultyLevel = difficultyLevel;
+    }
+
+    public String getCuisineType() {
+        return cuisineType;
+    }
+
+    public void setCuisineType(String cuisineType) {
+        this.cuisineType = cuisineType;
+    }
+
+    public List<String> getDietaryPreferences() {
+        return dietaryPreferences;
+    }
+
+    public void setDietaryPreferences(List<String> dietaryPreferences) {
+        this.dietaryPreferences = dietaryPreferences;
+    }
+
+    public List<Ingredient> getIngredients() {
+        return ingredients;
+    }
+
+    public void setIngredients(List<Ingredient> ingredients) {
+        this.ingredients = ingredients;
+    }
+
+    public List<Rating> getRatings() {
+        return ratings;
+    }
+
+    public void setRatings(List<Rating> ratings) {
+        this.ratings = ratings;
+    }
 }

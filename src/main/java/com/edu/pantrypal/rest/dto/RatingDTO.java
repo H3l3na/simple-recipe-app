@@ -6,6 +6,8 @@ public class RatingDTO {
     private int stars;
     private String review;
 
+    public RatingDTO() {}
+
     public RatingDTO(Long recipeId, int stars, String review) {
         this.recipeId = recipeId;
         this.stars = stars;

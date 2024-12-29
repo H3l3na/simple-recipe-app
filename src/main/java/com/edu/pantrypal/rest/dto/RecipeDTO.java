@@ -11,6 +11,8 @@ public class RecipeDTO {
     private List<String> dietaryPreferences;
     private List<IngredientDTO> ingredients;
 
+    public RecipeDTO() {}
+
     public RecipeDTO(String recipeName, int cookingTime, String difficultyLevel, String cuisineType, List<String> dietaryPreferences, List<IngredientDTO> ingredients) {
         this.recipeName = recipeName;
         this.cookingTime = cookingTime;

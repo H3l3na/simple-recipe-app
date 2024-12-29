@@ -1,8 +1,10 @@
 package src.main.java.com.edu.pantrypal.core.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import jakarta.persistence.*;
 
-@Entity
+@JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
+@Entity(name="ingredient")
 public class Ingredient {
 
     @Id
@@ -12,11 +14,34 @@ public class Ingredient {
     private String name;
     private String quantity;
 
-    // Constructor for dependency injection
+    public Ingredient() {}
+
     public Ingredient(String name, String quantity) {
         this.name = name;
         this.quantity = quantity;
     }
 
-    // Getters and setters omitted for brevity
+    public Long getIngredientId() {
+        return ingredientId;
+    }
+
+    public void setIngredientId(Long ingredientId) {
+        this.ingredientId = ingredientId;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getQuantity() {
+        return quantity;
+    }
+
+    public void setQuantity(String quantity) {
+        this.quantity = quantity;
+    }
 }

@@ -18,7 +18,7 @@ public class UserController {
         this.userService = userService;
     }
 
-    @PostMapping
+    @PostMapping("/create")
     public ResponseEntity<User> createUser(@RequestBody UserDTO userDTO) {
         User user = userService.createUser(userDTO);
         return ResponseEntity.ok(user);
@@ -27,11 +27,6 @@ public class UserController {
     @GetMapping("/{id}")
     public ResponseEntity<UserDTO> getUserById(@PathVariable Long id) {
         return ResponseEntity.ok(userService.getUserById(id));
-    }
-
-    @GetMapping("/{id}/favorites")
-    public ResponseEntity<List<Long>> getUserFavorites(@PathVariable Long id) {
-        return ResponseEntity.ok(userService.getUserFavorites(id));
     }
 }
 

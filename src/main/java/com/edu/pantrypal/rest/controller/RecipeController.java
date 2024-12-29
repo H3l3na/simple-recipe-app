@@ -18,12 +18,12 @@ public class RecipeController {
         this.recipeService = recipeService;
     }
 
-    @GetMapping
-    public ResponseEntity<List<RecipeDTO>> getAllRecipes() {
+    @GetMapping("/all")
+    public ResponseEntity<List<Recipe>> getAllRecipes() {
         return ResponseEntity.ok(recipeService.getAllRecipes());
     }
 
-    @PostMapping
+    @PostMapping("/create")
     public ResponseEntity<Recipe> createRecipe(@RequestBody RecipeDTO recipeDTO) {
         return ResponseEntity.ok(recipeService.createRecipe(recipeDTO));
     }
