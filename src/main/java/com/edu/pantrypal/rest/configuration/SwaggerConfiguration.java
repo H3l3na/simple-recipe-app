@@ -1,4 +1,4 @@
-package src.main.java.com.edu.pantrypal.rest.configuration;
+package com.edu.pantrypal.rest.configuration;
 
 import io.swagger.v3.oas.annotations.OpenAPIDefinition;
 import io.swagger.v3.oas.annotations.info.Contact;

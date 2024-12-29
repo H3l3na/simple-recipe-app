@@ -1,4 +1,4 @@
-package src.main.java.com.edu.pantrypal.rest.dto;
+package com.edu.pantrypal.rest.dto;
 
 public class RatingDTO {
 

@@ -7,8 +7,11 @@ spring:
   jpa:
     database-platform: org.hibernate.dialect.MySQLDialect
     hibernate:
-      ddl-auto: update
-    show-sql: true
+      ddl-auto: update  # This is fine, tells Hibernate to update schema
+    show-sql: true  # This enables SQL logging
+    properties:
+      hibernate:
+        format_sql: true  # This formats the SQL queries for better readability
   springdoc:
     api-docs:
       enabled: true

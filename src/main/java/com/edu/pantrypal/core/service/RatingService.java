@@ -1,10 +1,10 @@
-package src.main.java.com.edu.pantrypal.core.service;
+package com.edu.pantrypal.core.service;
 
+import com.edu.pantrypal.core.mapping.RatingMapper;
+import com.edu.pantrypal.core.model.Rating;
+import com.edu.pantrypal.core.repository.RatingRepository;
+import com.edu.pantrypal.rest.dto.RatingDTO;
 import org.springframework.stereotype.Service;
-import src.main.java.com.edu.pantrypal.core.mapping.RatingMapper;
-import src.main.java.com.edu.pantrypal.core.model.Rating;
-import src.main.java.com.edu.pantrypal.core.repository.RatingRepository;
-import src.main.java.com.edu.pantrypal.rest.dto.RatingDTO;
 
 import java.util.List;
 

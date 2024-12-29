@@ -1,8 +1,8 @@
-package src.main.java.com.edu.pantrypal.core.repository;
+package com.edu.pantrypal.core.repository;
 
+import com.edu.pantrypal.core.model.Rating;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
-import src.main.java.com.edu.pantrypal.core.model.Rating;
 
 import java.util.List;
 

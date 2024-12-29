@@ -1,7 +1,7 @@
-package src.main.java.com.edu.pantrypal.core.mapping;
+package com.edu.pantrypal.core.mapping;
 
-import src.main.java.com.edu.pantrypal.core.model.Rating;
-import src.main.java.com.edu.pantrypal.rest.dto.RatingDTO;
+import com.edu.pantrypal.core.model.Rating;
+import com.edu.pantrypal.rest.dto.RatingDTO;
 
 public class RatingMapper {
 

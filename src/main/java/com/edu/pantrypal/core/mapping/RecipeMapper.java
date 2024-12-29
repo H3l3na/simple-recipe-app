@@ -1,7 +1,7 @@
-package src.main.java.com.edu.pantrypal.core.mapping;
+package com.edu.pantrypal.core.mapping;
 
-import src.main.java.com.edu.pantrypal.core.model.Recipe;
-import src.main.java.com.edu.pantrypal.rest.dto.RecipeDTO;
+import com.edu.pantrypal.core.model.Recipe;
+import com.edu.pantrypal.rest.dto.RecipeDTO;
 
 import java.util.ArrayList;
 

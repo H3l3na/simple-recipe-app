@@ -1,4 +1,4 @@
-package src.main.java.com.edu.pantrypal.core.model;
+package com.edu.pantrypal.core.model;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import jakarta.persistence.Entity;

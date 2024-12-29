@@ -1,4 +1,4 @@
-package src.main.java.com.edu.pantrypal.core.model;
+package com.edu.pantrypal.core.model;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import jakarta.persistence.*;
@@ -11,6 +11,7 @@ public class Rating {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long ratingId;
 
+    private Long recipeId;
     private int stars;
     private String review;
 
@@ -43,5 +44,13 @@ public class Rating {
 
     public void setReview(String review) {
         this.review = review;
+    }
+
+    public Long getRecipeId() {
+        return recipeId;
+    }
+
+    public void setRecipeId(Long recipeId) {
+        this.recipeId = recipeId;
     }
 }

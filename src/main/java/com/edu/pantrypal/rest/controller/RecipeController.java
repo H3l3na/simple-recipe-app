@@ -1,15 +1,16 @@
-package src.main.java.com.edu.pantrypal.rest.controller;
+package com.edu.pantrypal.rest.controller;
 
+import com.edu.pantrypal.core.model.Recipe;
+import com.edu.pantrypal.core.service.RecipeService;
+import com.edu.pantrypal.rest.dto.RecipeDTO;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-import src.main.java.com.edu.pantrypal.core.model.Recipe;
-import src.main.java.com.edu.pantrypal.core.service.RecipeService;
-import src.main.java.com.edu.pantrypal.rest.dto.RecipeDTO;
 
 import java.util.List;
 
 @RestController
 @RequestMapping("/api/recipes")
+@CrossOrigin(origins = "http://localhost:5173")
 public class RecipeController {
 
     private final RecipeService recipeService;

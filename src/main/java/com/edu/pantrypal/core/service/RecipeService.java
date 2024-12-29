@@ -1,10 +1,10 @@
-package src.main.java.com.edu.pantrypal.core.service;
+package com.edu.pantrypal.core.service;
 
+import com.edu.pantrypal.core.mapping.RecipeMapper;
+import com.edu.pantrypal.core.model.Recipe;
+import com.edu.pantrypal.core.repository.RecipeRepository;
+import com.edu.pantrypal.rest.dto.RecipeDTO;
 import org.springframework.stereotype.Service;
-import src.main.java.com.edu.pantrypal.core.mapping.RecipeMapper;
-import src.main.java.com.edu.pantrypal.core.model.Recipe;
-import src.main.java.com.edu.pantrypal.core.repository.RecipeRepository;
-import src.main.java.com.edu.pantrypal.rest.dto.RecipeDTO;
 
 import java.util.List;
 

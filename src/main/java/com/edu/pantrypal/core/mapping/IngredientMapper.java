@@ -1,4 +1,4 @@
-package src.main.java.com.edu.pantrypal.core.mapping;
+package com.edu.pantrypal.core.mapping;
 
 public class IngredientMapper {
 }

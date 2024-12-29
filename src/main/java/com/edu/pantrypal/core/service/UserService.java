@@ -1,10 +1,10 @@
-package src.main.java.com.edu.pantrypal.core.service;
+package com.edu.pantrypal.core.service;
 
+import com.edu.pantrypal.core.mapping.UserMapper;
+import com.edu.pantrypal.core.model.User;
+import com.edu.pantrypal.core.repository.UserRepository;
+import com.edu.pantrypal.rest.dto.UserDTO;
 import org.springframework.stereotype.Service;
-import src.main.java.com.edu.pantrypal.core.mapping.UserMapper;
-import src.main.java.com.edu.pantrypal.core.model.User;
-import src.main.java.com.edu.pantrypal.core.repository.UserRepository;
-import src.main.java.com.edu.pantrypal.rest.dto.UserDTO;
 
 @Service
 public class UserService {

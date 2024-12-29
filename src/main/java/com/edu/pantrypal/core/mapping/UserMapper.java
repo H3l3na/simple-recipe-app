@@ -1,7 +1,8 @@
-package src.main.java.com.edu.pantrypal.core.mapping;
+package com.edu.pantrypal.core.mapping;
 
-import src.main.java.com.edu.pantrypal.core.model.User;
-import src.main.java.com.edu.pantrypal.rest.dto.UserDTO;
+
+import com.edu.pantrypal.core.model.User;
+import com.edu.pantrypal.rest.dto.UserDTO;
 
 public class UserMapper {
 

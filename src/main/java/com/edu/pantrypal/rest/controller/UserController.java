@@ -1,15 +1,14 @@
-package src.main.java.com.edu.pantrypal.rest.controller;
+package com.edu.pantrypal.rest.controller;
 
+import com.edu.pantrypal.core.model.User;
+import com.edu.pantrypal.core.service.UserService;
+import com.edu.pantrypal.rest.dto.UserDTO;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-import src.main.java.com.edu.pantrypal.core.model.User;
-import src.main.java.com.edu.pantrypal.core.service.UserService;
-import src.main.java.com.edu.pantrypal.rest.dto.UserDTO;
-
-import java.util.List;
 
 @RestController
 @RequestMapping("/api/users")
+@CrossOrigin(origins = "http://localhost:5173")
 public class UserController {
 
     private final UserService userService;

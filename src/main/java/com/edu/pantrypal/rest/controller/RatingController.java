@@ -1,15 +1,16 @@
-package src.main.java.com.edu.pantrypal.rest.controller;
+package com.edu.pantrypal.rest.controller;
 
+import com.edu.pantrypal.core.model.Rating;
+import com.edu.pantrypal.core.service.RatingService;
+import com.edu.pantrypal.rest.dto.RatingDTO;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-import src.main.java.com.edu.pantrypal.core.model.Rating;
-import src.main.java.com.edu.pantrypal.core.service.RatingService;
-import src.main.java.com.edu.pantrypal.rest.dto.RatingDTO;
 
 import java.util.List;
 
 @RestController
 @RequestMapping("/api/ratings")
+@CrossOrigin(origins = "http://localhost:5173")
 public class RatingController {
 
     private final RatingService ratingService;
