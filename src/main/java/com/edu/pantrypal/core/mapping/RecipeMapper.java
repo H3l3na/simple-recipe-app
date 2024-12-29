@@ -13,6 +13,7 @@ public class RecipeMapper {
         }
 
         RecipeDTO dto = new RecipeDTO();
+        dto.setRecipeId(recipe.getRecipeId());
         dto.setCookingTime(recipe.getCookingTime());
         dto.setCuisineType(recipe.getCuisineType());
         dto.setDietaryPreferences(recipe.getDietaryPreferences());

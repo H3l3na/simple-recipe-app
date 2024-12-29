@@ -20,7 +20,7 @@ public class RecipeController {
     }
 
     @GetMapping("/all")
-    public ResponseEntity<List<Recipe>> getAllRecipes() {
+    public ResponseEntity<List<RecipeDTO>> getAllRecipes() {
         return ResponseEntity.ok(recipeService.getAllRecipes());
     }
 

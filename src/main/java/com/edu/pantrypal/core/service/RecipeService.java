@@ -2,35 +2,53 @@ package com.edu.pantrypal.core.service;
 
 import com.edu.pantrypal.core.mapping.IngredientMapper;
 import com.edu.pantrypal.core.mapping.RecipeMapper;
+import com.edu.pantrypal.core.model.Ingredient;
 import com.edu.pantrypal.core.model.Recipe;
 import com.edu.pantrypal.core.model.User;
+import com.edu.pantrypal.core.repository.IngredientRepository;
 import com.edu.pantrypal.core.repository.RecipeRepository;
 import com.edu.pantrypal.core.repository.UserRepository;
+import com.edu.pantrypal.rest.dto.IngredientDTO;
 import com.edu.pantrypal.rest.dto.RecipeDTO;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.stream.Collectors;
 
 @Service
 public class RecipeService {
 
     private final RecipeRepository recipeRepository;
     private final UserRepository userRepository;
+    private final IngredientRepository ingredientRepository;
 
-    public RecipeService(RecipeRepository recipeRepository, UserRepository userRepository) {
+    public RecipeService(RecipeRepository recipeRepository, UserRepository userRepository, IngredientRepository ingredientRepository) {
         this.recipeRepository = recipeRepository;
         this.userRepository = userRepository;
+        this.ingredientRepository = ingredientRepository;
     }
 
-    public List<Recipe> getAllRecipes() {
-        return recipeRepository.findAll();
+    public List<RecipeDTO> getAllRecipes() {
+        List<Recipe> recipes =  recipeRepository.findAll();
+
+        return recipes.stream()
+                .map(recipe -> {
+                    RecipeDTO recipeDTO = RecipeMapper.toDTO(recipe);
+
+                    List<Ingredient> ingredients = ingredientRepository.findByRecipeId(recipe.getRecipeId());
+                    recipeDTO.setIngredients(IngredientMapper.toDTO(ingredients));
+                    return recipeDTO;
+                })
+                .collect(Collectors.toList());
     }
 
     public RecipeDTO getRecipeById(Long recipeId) {
         Recipe recipe = recipeRepository.findByRecipeId(recipeId);
 
         RecipeDTO recipeDTO = RecipeMapper.toDTO(recipe);
-        recipeDTO.setIngredients(IngredientMapper.toDTO(recipe.getIngredients()));
+
+        List<Ingredient> ingredients = ingredientRepository.findByRecipeId(recipeId);
+        recipeDTO.setIngredients(IngredientMapper.toDTO(ingredients));
 
         return recipeDTO;
     }
