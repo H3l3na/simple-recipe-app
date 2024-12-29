@@ -4,6 +4,7 @@ import java.util.List;
 
 public class RecipeDTO {
 
+    private Long recipeId;
     private String recipeName;
     private int cookingTime;
     private String difficultyLevel;
@@ -28,6 +29,14 @@ public class RecipeDTO {
 
     public void setRecipeName(String recipeName) {
         this.recipeName = recipeName;
+    }
+
+    public Long getRecipeId() {
+        return recipeId;
+    }
+
+    public void setRecipeId(long recipeId) {
+        this.recipeId = recipeId;
     }
 
     public int getCookingTime() {

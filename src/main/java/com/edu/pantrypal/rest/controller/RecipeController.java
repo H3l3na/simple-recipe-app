@@ -39,5 +39,11 @@ public class RecipeController {
         recipeService.deleteRecipe(id);
         return ResponseEntity.noContent().build();
     }
+
+    @GetMapping("/favorite/{userId}")
+    public ResponseEntity<List<Recipe>> fetchMyRecipes(@PathVariable Long userId) {
+        List<Recipe> favoriteRecipes = recipeService.fetchMyRecipes(userId);
+        return ResponseEntity.ok(favoriteRecipes);
+    }
 }
 

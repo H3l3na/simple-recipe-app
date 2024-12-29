@@ -1,10 +1,9 @@
 package com.edu.pantrypal.core.model;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
+
+import java.util.List;
 
 @JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
 @Entity(name="user")
@@ -24,6 +23,14 @@ public class User {
         this.password = password;
         this.email = email;
     }
+
+    @ManyToMany
+    @JoinTable(
+            name = "user_favorite_recipes",  // The join table name
+            joinColumns = @JoinColumn(name = "userId"),  // Foreign key to User
+            inverseJoinColumns = @JoinColumn(name = "recipeId")  // Foreign key to Recipe
+    )
+    private List<Recipe> favoriteRecipes;
 
     public Long getUserId() {
         return userId;
@@ -55,5 +62,13 @@ public class User {
 
     public void setEmail(String email) {
         this.email = email;
+    }
+
+    public List<Recipe> getFavoriteRecipes() {
+        return favoriteRecipes;
+    }
+
+    public void setFavoriteRecipes(List<Recipe> favoriteRecipes) {
+        this.favoriteRecipes = favoriteRecipes;
     }
 }
