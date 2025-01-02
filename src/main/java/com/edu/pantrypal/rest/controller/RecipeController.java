@@ -46,4 +46,3 @@ public class RecipeController {
         return ResponseEntity.ok(favoriteRecipes);
     }
 }
-
