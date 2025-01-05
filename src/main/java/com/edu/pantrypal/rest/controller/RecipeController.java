@@ -10,7 +10,6 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/api/recipes")
-@CrossOrigin(origins = "http://localhost:5173")
 public class RecipeController {
 
     private final RecipeService recipeService;
@@ -46,4 +45,3 @@ public class RecipeController {
         return ResponseEntity.ok(favoriteRecipes);
     }
 }
-
