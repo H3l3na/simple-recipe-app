@@ -3,6 +3,7 @@ package com.edu.pantrypal.core.service;
 import com.edu.pantrypal.core.model.Recipe;
 import com.edu.pantrypal.core.model.User;
 import com.edu.pantrypal.core.repository.IngredientRepository;
+import com.edu.pantrypal.core.repository.RatingRepository;
 import com.edu.pantrypal.core.repository.RecipeRepository;
 import com.edu.pantrypal.core.repository.UserRepository;
 import com.edu.pantrypal.rest.dto.RecipeDTO;
@@ -14,6 +15,7 @@ import org.mockito.MockitoAnnotations;
 
 import java.util.Collections;
 import java.util.List;
+import java.util.ArrayList;
 import java.util.Optional;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -30,6 +32,9 @@ class RecipeServiceTest {
     @Mock
     private IngredientRepository ingredientRepository;
 
+    @Mock
+    private RatingRepository ratingRepository;
+
     @InjectMocks
     private RecipeService recipeService;
 
@@ -43,8 +48,10 @@ class RecipeServiceTest {
         // Given
         Recipe recipe = new Recipe();
         recipe.setRecipeId(1L);
+        recipe.setRatings(new ArrayList<>());
         when(recipeRepository.findAll()).thenReturn(List.of(recipe));
         when(ingredientRepository.findByRecipeId(1L)).thenReturn(Collections.emptyList());
+        when(ratingRepository.findByRecipeId(1L)).thenReturn(Collections.emptyList());
 
         // When
         List<RecipeDTO> recipes = recipeService.getAllRecipes();
@@ -61,8 +68,10 @@ class RecipeServiceTest {
         // Given
         Recipe recipe = new Recipe();
         recipe.setRecipeId(1L);
+        recipe.setRatings(new ArrayList<>());
         when(recipeRepository.findByRecipeId(1L)).thenReturn(recipe);
         when(ingredientRepository.findByRecipeId(1L)).thenReturn(Collections.emptyList());
+        when(ratingRepository.findByRecipeId(1L)).thenReturn(Collections.emptyList());
 
         // When
         RecipeDTO recipeDTO = recipeService.getRecipeById(1L);

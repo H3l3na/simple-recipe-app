@@ -1,9 +1,11 @@
 package com.edu.pantrypal.core.mapping;
 
+import com.edu.pantrypal.core.model.Rating;
 import com.edu.pantrypal.core.model.Recipe;
 import com.edu.pantrypal.rest.dto.RecipeDTO;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class RecipeMapper {
 
@@ -20,6 +22,8 @@ public class RecipeMapper {
         dto.setDifficultyLevel(recipe.getDifficultyLevel());
         dto.setRecipeName(recipe.getRecipeName());
         dto.setPreparationSteps(recipe.getPreparationSteps());
+        dto.setAverageRating(calculateAverageRating(recipe.getRatings()));
+        dto.setNumberOfRatings(recipe.getRatings().size());
 
         return dto;
     }
@@ -39,5 +43,16 @@ public class RecipeMapper {
         recipe.setPreparationSteps(dto.getPreparationSteps());
 
         return recipe;
+    }
+
+    private static Double calculateAverageRating(List<Rating> ratings) {
+        if (ratings == null || ratings.isEmpty()) {
+            return 0.0;
+        }
+
+        return ratings.stream()
+                .mapToDouble(Rating::getStars)
+                .average()
+                .orElse(0.0);
     }
 }

@@ -5,6 +5,7 @@ import com.edu.pantrypal.core.model.Rating;
 import com.edu.pantrypal.core.repository.RatingRepository;
 import com.edu.pantrypal.rest.dto.RatingDTO;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 
@@ -21,10 +22,10 @@ public class RatingService {
         return ratingRepository.findByRecipeId(recipeId);
     }
 
+    @Transactional
     public Rating addRating(RatingDTO dto) {
         Rating rating = RatingMapper.toEntity(dto);
-        ratingRepository.save(rating);
 
-        return rating;
+        return ratingRepository.save(rating);
     }
 }

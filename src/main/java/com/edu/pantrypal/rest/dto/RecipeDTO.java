@@ -12,6 +12,8 @@ public class RecipeDTO {
     private String preparationSteps;
     private List<String> dietaryPreferences;
     private List<IngredientDTO> ingredients;
+    private Double averageRating;
+    private Integer numberOfRatings;
 
     public RecipeDTO() {}
 
@@ -86,6 +88,22 @@ public class RecipeDTO {
 
     public void setIngredients(List<IngredientDTO> ingredients) {
         this.ingredients = ingredients;
+    }
+
+    public Double getAverageRating() {
+        return averageRating;
+    }
+
+    public void setAverageRating(Double averageRating) {
+        this.averageRating = averageRating;
+    }
+
+    public Integer getNumberOfRatings() {
+        return numberOfRatings;
+    }
+
+    public void setNumberOfRatings(Integer numberOfRatings) {
+        this.numberOfRatings = numberOfRatings;
     }
 }
 
