@@ -24,7 +24,7 @@ public class User {
         this.email = email;
     }
 
-    @ManyToMany
+    @ManyToMany(cascade = {CascadeType.PERSIST, CascadeType.MERGE})
     @JoinTable(
             name = "user_favorite_recipes",  // The join table name
             joinColumns = @JoinColumn(name = "userId"),  // Foreign key to User

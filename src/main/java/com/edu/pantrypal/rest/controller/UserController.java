@@ -10,7 +10,6 @@ import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/api/users")
-//@CrossOrigin(origins = "http://localhost:5173")
 public class UserController {
 
     private final UserService userService;
@@ -33,9 +32,10 @@ public class UserController {
     }
 
     @PostMapping("/{userId}/favorite")
-    public ResponseEntity<String> favoriteRecipe(@PathVariable Long userId, @RequestBody RecipeDTO recipeDTO) {
-        recipeService.addToFavorites(userId, recipeDTO.getRecipeId());
-        return ResponseEntity.ok("Recipe added to favorites successfully.");
+    public ResponseEntity<String> toggleFavoriteRecipe(@PathVariable Long userId, @RequestBody RecipeDTO recipeDTO) {
+        boolean isFavorite = recipeService.toggleFavorite(userId, recipeDTO.getRecipeId());
+        String message = isFavorite ? "Recipe added to favorites successfully." : "Recipe removed from favorites.";
+        return ResponseEntity.ok(message);
     }
 }
 

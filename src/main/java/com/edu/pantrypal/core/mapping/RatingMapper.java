@@ -12,7 +12,7 @@ public class RatingMapper {
 
         RatingDTO dto = new RatingDTO();
         dto.setRecipeId(rating.getRatingId());
-        dto.setReview(rating.getReview());
+        //dto.setReview(rating.getReview());
         dto.setStars(rating.getStars());
 
         return dto;
@@ -24,7 +24,7 @@ public class RatingMapper {
         }
 
         Rating rating = new Rating();
-        rating.setRatingId(dto.getRecipeId());
+        rating.setRecipeId(dto.getRecipeId());
         rating.setReview(dto.getReview());
         rating.setStars(dto.getStars());
 

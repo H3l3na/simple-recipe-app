@@ -33,13 +33,13 @@ public class IngredientMapper {
         return dto;
     }
 
-    public static Ingredient toEntity(IngredientDTO dto){
+    public static Ingredient toEntity(IngredientDTO dto, Long recipeId){
         if (dto == null){
             return null;
         }
 
         Ingredient ingredient = new Ingredient();
-        ingredient.setRecipeId(dto.getRecipeId());
+        ingredient.setRecipeId(recipeId);
         ingredient.setQuantity(dto.getQuantity());
         ingredient.setName(dto.getName());
 
