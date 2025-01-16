@@ -17,6 +17,7 @@ public class Recipe {
     private String difficultyLevel;
     private String cuisineType;
     private String preparationSteps;
+    private Integer servings;
 
     @ElementCollection
     private List<String> dietaryPreferences;
@@ -106,5 +107,13 @@ public class Recipe {
 
     public void setRatings(List<Rating> ratings) {
         this.ratings = ratings;
+    }
+
+    public Integer getServings() {
+        return servings;
+    }
+
+    public void setServings(Integer servings) {
+        this.servings = servings;
     }
 }

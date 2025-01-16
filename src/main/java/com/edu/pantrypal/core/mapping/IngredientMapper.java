@@ -27,19 +27,21 @@ public class IngredientMapper {
 
         IngredientDTO dto = new IngredientDTO();
         dto.setRecipeId(ingredient.getRecipeId());
+        dto.setNumberOfCalories(ingredient.getNumberOfCalories());
         dto.setQuantity(ingredient.getQuantity());
         dto.setName(ingredient.getName());
 
         return dto;
     }
 
-    public static Ingredient toEntity(IngredientDTO dto){
+    public static Ingredient toEntity(IngredientDTO dto, Long recipeId){
         if (dto == null){
             return null;
         }
 
         Ingredient ingredient = new Ingredient();
-        ingredient.setRecipeId(dto.getRecipeId());
+        ingredient.setRecipeId(recipeId);
+        ingredient.setNumberOfCalories(dto.getNumberOfCalories());
         ingredient.setQuantity(dto.getQuantity());
         ingredient.setName(dto.getName());
 

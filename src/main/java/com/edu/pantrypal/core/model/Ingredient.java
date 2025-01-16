@@ -12,6 +12,7 @@ public class Ingredient {
     private Long ingredientId;
 
     private String name;
+    private Integer numberOfCalories;
     private String quantity;
     private Long recipeId;
 
@@ -52,5 +53,13 @@ public class Ingredient {
 
     public void setRecipeId(Long recipeId) {
         this.recipeId = recipeId;
+    }
+
+    public Integer getNumberOfCalories() {
+        return numberOfCalories;
+    }
+
+    public void setNumberOfCalories(Integer numberOfCalories) {
+        this.numberOfCalories = numberOfCalories;
     }
 }
